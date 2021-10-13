@@ -1,4 +1,12 @@
 import * as React from "react";
+import Layout from "../components/layout";
+import HomeCover from "../sections/cover";
+import Languages from "../sections/languages";
+import Profiles from "../sections/profiles";
+import Projects from "../sections/projects";
+import Services from "../sections/services";
+import Stacks from "../sections/stacks";
+import Tools from "../sections/tools";
 
 // const IndexPage = () => {
 //   return <div>Hellooo</div>;
@@ -7,7 +15,17 @@ import * as React from "react";
 export default function IndexPage() {
   return (
     <div>
-      <h1>Hello</h1>
+      <Layout>
+        <div className="home">
+          <HomeCover />
+          <Services />
+          <Projects />
+          <Stacks />
+          <Tools />
+          <Languages />
+          <Profiles />
+        </div>
+      </Layout>
     </div>
   );
 }
