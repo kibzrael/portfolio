@@ -2,7 +2,6 @@ import * as React from "react";
 import Layout from "../components/layout";
 import HomeCover from "../sections/cover";
 import Languages from "../sections/languages";
-import Profiles from "../sections/profiles";
 import Projects from "../sections/projects";
 import Services from "../sections/services";
 import Stacks from "../sections/stacks";
@@ -23,7 +22,6 @@ export default function IndexPage() {
           <Stacks />
           <Tools />
           <Languages />
-          <Profiles />
         </div>
       </Layout>
     </div>

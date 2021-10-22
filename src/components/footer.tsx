@@ -1,8 +1,12 @@
 import React from "react";
+import Contact from "../sections/contact";
+import Profiles from "../sections/profiles";
 
 export default function Footer() {
   return (
-    <div>
+    <div className="w-full px-9 py-6 bg-blue-800 text-white flex flex-col items-center">
+      <Profiles />
+      <Contact />
       <p>Copyright 2021 @kibzrael</p>
     </div>
   );
