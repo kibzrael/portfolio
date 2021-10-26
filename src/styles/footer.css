@@ -1,0 +1,7 @@
+.input {
+  @apply px-6 py-2 text-gray-800 border-0 rounded-md;
+}
+
+.input:focus {
+  @apply outline-none;
+}
