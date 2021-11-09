@@ -3,7 +3,7 @@ import React from "react";
 export default function Languages() {
   let languages: string[] = ["Python", "Typescript", "Dart", "Javascript"];
   return (
-    <div className="mx-12 lg:mx-24 my-9">
+    <div className="mx-2 xsm:mx-4 sm:mx-6 md:mx-12 lg:mx-24 my-9">
       <h2>Languages</h2>
       <div className="flex flex-wrap justify-evenly">
         {languages.map((language: string, index: number) => {

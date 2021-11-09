@@ -3,7 +3,7 @@ import React from "react";
 export default function Tools() {
   let tools: string[] = ["Git", "Figma", "Vs Code"];
   return (
-    <div className="mx-12 lg:mx-24 my-9">
+    <div className="mx-2 xsm:mx-4 sm:mx-6 md:mx-12 lg:mx-24 my-9">
       <h2>Tools</h2>
       <div className="flex flex-wrap justify-evenly">
         {tools.map((tool: string, index: number) => {

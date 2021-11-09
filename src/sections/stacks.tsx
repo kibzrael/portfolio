@@ -5,7 +5,7 @@ export default function Stacks() {
   let mobile: string[] = ["Flutter", "Django"];
 
   return (
-    <div className="mx-12 lg:mx-24 my-9 space-y-4">
+    <div className="mx-2 xsm:mx-4 sm:mx-12 md:mx-12 lg:mx-24 my-9 space-y-4">
       <h2>Stacks</h2>
       <div>
         <h3 className="text-center m-4">Web</h3>

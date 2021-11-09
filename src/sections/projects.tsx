@@ -14,7 +14,7 @@ export default function Projects() {
   let projects: string[] = ["Pulsar", "ShopVille", "Portofolio"];
 
   return (
-    <div className="mx-12 lg:mx-24 my-9">
+    <div className="mx-2 xsm:mx-4 sm:mx-6 md:mx-12 lg:mx-24 my-9">
       <h2>My Work</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project: string, index: number) => {
@@ -24,7 +24,7 @@ export default function Projects() {
               style={{
                 width: "90%",
               }}
-              className={`h-auto overflow-hidden bg-card my-6 shadow-md rounded-lg flex ${
+              className={`h-auto mx-auto overflow-hidden bg-card my-6 shadow-md rounded-lg flex ${
                 row ? "flex-row" : "flex-col space-y-2 pb-2"
               } items-center`}>
               <div

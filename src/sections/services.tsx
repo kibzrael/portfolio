@@ -8,7 +8,7 @@ export default function Services() {
     "Hosting",
   ];
   return (
-    <div className="mx-6 md:mx-12 lg:mx-24 py-9">
+    <div className="mx-2 xsm:mx-4 sm:mx-6 md:mx-12 lg:mx-24 py-9">
       {services.map((service: string, index: number) => {
         return (
           <div

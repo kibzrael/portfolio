@@ -40,7 +40,7 @@ export default function HomeCover() {
         className="w-full md:w-1/2 h-1/2 md:h-full object-cover"
       />
 
-      <div className="flex flex-col justify-center my-auto md:mx-auto items-center space-y-8">
+      <div className="flex flex-col justify-center my-auto md:mx-auto items-center text-center space-y-8">
         <p className="text-2xl text-headline font-medium">Hey I am</p>
         <p className="text-5xl font-serif italic font-semibold">Raphael Kibe</p>
         <div className="flex flex-col space-y-2 items-center">
