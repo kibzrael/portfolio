@@ -30,7 +30,7 @@ export default function Stacks() {
 function Stack(props: { stack: string }) {
   return (
     <div className="flex flex-row space-x-8">
-      <div className="w-14 h-14 bg-gray-50 rounded-md shadow-md"></div>
+      <div className="w-14 h-14 bg-card rounded-md shadow-md"></div>
       <div className="flex flex-col">
         <h4>{props.stack}</h4>
         <p className="text-sm text-subtitle">lorem ipsum dolor sit amet</p>

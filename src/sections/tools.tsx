@@ -8,8 +8,8 @@ export default function Tools() {
       <div className="flex flex-wrap justify-evenly">
         {tools.map((tool: string, index: number) => {
           return (
-            <div key={index} className="flex flex-col items-center">
-              <div className="w-14 h-14 rounded-full bg-gray-100"></div>
+            <div key={index} className="mx-2 flex flex-col items-center">
+              <div className="w-14 h-14 rounded-full bg-card"></div>
               <h4>{tool}</h4>
               <p className="text-sm text-subtitle flex-nowrap">Lorem ipsum</p>
             </div>

@@ -1,13 +1,15 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "portfolio",
+    title: "raelcode",
     description: ''
   },
   plugins: [
   'gatsby-plugin-postcss',
   `gatsby-plugin-typescript`,
   `gatsby-transformer-json`,
+  `gatsby-transformer-sharp`, 
+  `gatsby-plugin-sharp`,
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
@@ -17,7 +19,8 @@ module.exports = {
       background_color: `#f7f0eb`,
       theme_color: `#a2466c`,
       display: `standalone`,
-      icon: `src/images/icon.png`,
+      icon: `images/icon.png`,
+      title: `raelcode`,
     },
   },
   {
@@ -25,6 +28,13 @@ module.exports = {
     options: {
       name: `data`,
       path: `${__dirname}/data/`,
+    },
+  },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `images`,
+      path: `${__dirname}/images/`,
     },
   },
 ],

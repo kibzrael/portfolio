@@ -8,8 +8,8 @@ export default function Languages() {
       <div className="flex flex-wrap justify-evenly">
         {languages.map((language: string, index: number) => {
           return (
-            <div key={index} className="flex flex-col items-center">
-              <div className="w-14 h-14 rounded-full bg-gray-100"></div>
+            <div key={index} className="mx-2 flex flex-col items-center">
+              <div className="w-14 h-14 rounded-full bg-card"></div>
               <h4>{language}</h4>
             </div>
           );

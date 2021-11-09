@@ -6,8 +6,11 @@ module.exports = {
       colors:{
         primary: '#ff9900',
         secondary: '#146eb4',
+        background: '#181818',
+        card:'#363636',
         surface: '#f2f2f2',
-        headline:'#565656',
+        headline:'#d3d3d3',
+        bodytext: '#ffffff',
         subtitle:'#A3A3A3',
       }
     },

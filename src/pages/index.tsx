@@ -13,7 +13,7 @@ import Tools from "../sections/tools";
 
 export default function IndexPage() {
   return (
-    <div>
+    <div className="">
       <Layout>
         <div className="home">
           <HomeCover />
