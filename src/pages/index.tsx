@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import Layout from "../components/layout";
 import HomeCover from "../sections/cover";
 import Languages from "../sections/languages";
@@ -14,6 +15,10 @@ import Tools from "../sections/tools";
 export default function IndexPage() {
   return (
     <div className="">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Raelcode</title>
+      </Helmet>
       <Layout>
         <div className="home">
           <HomeCover />
