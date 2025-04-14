@@ -34,7 +34,9 @@ const handleTestimonialsScroll = () => {
     const scroll = cardWidth();
     const offset = carousel.scrollLeft % scroll;
     carousel.scrollTo({
-      left: carousel.scrollLeft + (scroll - offset),
+      left:
+        carousel.scrollLeft +
+        (offset > 0.9 * scroll ? scroll + offset : scroll - offset),
       behavior: "smooth",
     });
   });
