@@ -29,6 +29,12 @@
   body {
     @apply bg-surface-default text-default font-sans;
   }
+
+  a,
+  button,
+  *[role="button"] {
+    cursor: pointer;
+  }
 }
 
 @utility wrapper {
@@ -94,7 +100,7 @@
 }
 
 @utility input {
-  @apply bg-transparent placeholder:text-subtitle text-subtitle border border-default rounded-[1.75rem] py-3 px-6 !outline-none;
+  @apply bg-transparent placeholder:text-subtitle text-subtitle border border-default focus:border-primary rounded-[1.75rem] py-3 px-6 !outline-none transition-all;
 }
 
 input:-webkit-autofill,
@@ -104,6 +110,24 @@ input:-webkit-autofill:active {
   -webkit-background-clip: text;
   transition: background-color 5000s ease-in-out 0s;
   box-shadow: inset 0 0 20px 20px transparent;
+}
+
+@utility hover-glow {
+  @apply transition-all;
+}
+
+@utility hover-glow-sm {
+  @apply transition-all;
+}
+
+.hover-glow:hover {
+  box-shadow: 1px 5px 16px 2px rgba(255, 146, 41, 0.25);
+  transform: translateY(-2px);
+}
+
+.hover-glow-sm:hover {
+  box-shadow: 0px 3px 12px 0px rgba(255, 146, 41, 0.175);
+  transform: translateY(-2px);
 }
 
 @utility project-card {
@@ -133,7 +157,11 @@ input:-webkit-autofill:active {
 }
 
 .project-card .arrow {
-  @apply absolute top-2 right-2 sm:top-4 sm:right-4 bg-black/30 fill-white rounded-full aspect-square p-3 sm:p-4 flex items-center justify-center;
+  @apply absolute top-2 right-2 sm:top-4 sm:right-4 bg-black/30 fill-white rounded-full aspect-square p-3 sm:p-4 flex items-center justify-center transition-all;
+}
+
+.project-card:hover .arrow {
+  @apply bg-primary fill-on-primary;
 }
 
 .project-card .arrow .icon {

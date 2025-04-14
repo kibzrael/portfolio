@@ -16,7 +16,7 @@
   <body class="landing-page">
     <header
       class="fixed top-0 left-0 right-0 z-10 flex items-center justify-between gap-4 py-4">
-      <span class="logo"><span class="text-secondary">Rael</span>Code</span>
+      <a href="#" class="logo"><span class="text-secondary">Rael</span>Code</a>
 
       <nav class="max-lg:hidden flex items-center gap-8 text-xl font-serif">
         <a href="#about">About</a>
@@ -25,7 +25,9 @@
         <a href="#testimonials">Testimonials</a>
       </nav>
 
-      <a href="#contact" class="border border-default py-2 px-6 rounded-full">
+      <a
+        href="#contact"
+        class="border border-default hover:border-primary hover:bg-primary hover:text-on-primary transition-all py-2 px-6 rounded-full">
         Get in touch
       </a>
     </header>
@@ -51,7 +53,7 @@
           </p>
           <a
             href="#contact"
-            class="bg-primary text-on-primary text-lg text-center py-3 px-12 rounded-full min-w-[18rem] call-to-action">
+            class="bg-primary text-on-primary text-lg text-center py-3 px-12 rounded-full min-w-[18rem] call-to-action hover-glow">
             Get in touch
           </a>
           <div
@@ -96,18 +98,33 @@
           </p>
         </div>
         <div class="flex gap-3 lg:gap-6 flex-wrap">
-          <div class="chip">
-            <span class="icon">github</span>
+          <a
+            href="https://github.com/kibzrael"
+            target="_blank"
+            class="chip group hover:bg-primary hover:text-on-primary transition-all">
+            <span class="icon group-hover:!fill-on-primary transition-all"
+              >github</span
+            >
             Github
-          </div>
-          <div class="chip">
-            <span class="icon">linkedin</span>
+          </a>
+          <a
+            href="https://linkedin.com/in/kibzrael/"
+            target="_blank"
+            class="chip group hover:bg-primary hover:text-on-primary transition-all">
+            <span class="icon group-hover:!fill-on-primary transition-all"
+              >linkedin</span
+            >
             LinkedIn
-          </div>
-          <div class="chip">
-            <span class="icon">upwork</span>
+          </a>
+          <a
+            href="https://upwork.com/freelancers/raphaelkibe"
+            target="_blank"
+            class="chip group hover:bg-primary hover:text-on-primary transition-all">
+            <span class="icon group-hover:!fill-on-primary transition-all"
+              >upwork</span
+            >
             Upwork
-          </div>
+          </a>
         </div>
       </div>
       <div
@@ -145,9 +162,9 @@
         <article
           class="project-card | max-md:aspect-square md:max-xl:aspect-video md:col-span-6 xl:col-span-3">
           <img src="/src/assets/projects/raeltronics.webp" alt="raeltronics" />
-          <span class="arrow">
+          <!-- <span class="arrow">
             <span class="icon">arrowUpRight</span>
-          </span>
+          </span> -->
           <div class="details">
             <h3>RaelTronics</h3>
             <p>
@@ -176,7 +193,10 @@
             </div>
           </div>
         </article>
-        <article class="project-card | max-md:aspect-square md:col-span-3">
+        <a
+          href="https://goatmentor.tech/"
+          target="_blank"
+          class="project-card | max-md:aspect-square md:col-span-3">
           <img src="/src/assets/projects/goatmentor.webp" alt="goatmentor" />
           <span class="arrow">
             <span class="icon">arrowUpRight</span>
@@ -208,8 +228,11 @@
               </div>
             </div>
           </div>
-        </article>
-        <article class="project-card | md:col-span-3 xl:col-span-2">
+        </a>
+        <a
+          href="https://eduk.bleuk.ca/"
+          target="_blank"
+          class="project-card | md:col-span-3 xl:col-span-2">
           <img src="/src/assets/projects/eduk.webp" alt="eduk" />
           <span class="arrow">
             <span class="icon">arrowUpRight</span>
@@ -236,8 +259,11 @@
               </div>
             </div>
           </div>
-        </article>
-        <article class="project-card | md:col-span-3 xl:col-span-2">
+        </a>
+        <a
+          href="https://wifeplanet.com/"
+          target="_blank"
+          class="project-card | md:col-span-3 xl:col-span-2">
           <img src="/src/assets/projects/wifeplanet.webp" alt="wifeplanet" />
           <span class="arrow">
             <span class="icon">arrowUpRight</span>
@@ -264,7 +290,7 @@
               </div>
             </div>
           </div>
-        </article>
+        </a>
         <article class="project-card | md:col-span-3 xl:col-span-2">
           <img src="/src/assets/projects/sirience.webp" alt="sirience" />
           <div class="details">
@@ -409,6 +435,7 @@
       >
       <h2 class="text-display-md text-center">See what Clients say</h2>
       <div
+        id="testimonials-carousel"
         class="flex gap-12 justify-center-safe overflow-auto scrollbar-hidden my-12">
         <article
           class="flex flex-col gap-8 p-8 rounded-3xl bg-surface-card min-w-full sm:min-w-3/5 lg:min-w-2/5">
@@ -455,14 +482,16 @@
         </article>
       </div>
       <div class="flex gap-4 justify-end">
-        <span
-          class="bg-primary fill-on-primary rounded-full aspect-square p-3 flex items-center justify-center">
+        <button
+          id="testimonials-prev"
+          class="bg-primary fill-on-primary hover-glow-sm rounded-full aspect-square p-3 flex items-center justify-center">
           <span class="icon w-8 h-8">arrowLeft</span>
-        </span>
-        <span
-          class="bg-surface-card fill-default rounded-full aspect-square p-3 flex items-center justify-center">
+        </button>
+        <button
+          id="testimonials-next"
+          class="bg-surface-card fill-default hover-glow-sm rounded-full aspect-square p-3 flex items-center justify-center">
           <span class="icon w-8 h-8">arrowRight</span>
-        </span>
+        </button>
       </div>
     </section>
     <footer id="contact" class="pt-[5rem] flex flex-col gap-12">
@@ -485,13 +514,15 @@
             placeholder="Phone (Optional)"
             class="flex-2 input" />
           <button
-            class="flex-1 bg-primary text-on-primary text-lg text-center py-3 px-12 rounded-full">
+            class="flex-1 bg-primary text-on-primary hover-glow text-lg text-center py-3 px-12 rounded-full">
             Get in touch
           </button>
         </div>
       </div>
       <section class="flex items-center justify-between gap-4 py-4 w-full">
-        <span class="logo"><span class="text-secondary">Rael</span>Code</span>
+        <a href="#" class="logo"
+          ><span class="text-secondary">Rael</span>Code</a
+        >
 
         <nav class="max-lg:hidden flex items-center gap-8 text-lg font-serif">
           <a href="#about">About</a>
