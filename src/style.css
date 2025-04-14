@@ -1,98 +1,266 @@
 @import "tailwindcss";
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@theme {
+  /* Brand colors */
+  --color-primary: #ffffff;
+  --color-secondary: #ff9328;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Surface colors */
+  --background-color-surface-default: #000000;
+  --background-color-surface-card: #ffffff1a;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  /* Border colors */
+  --border-color-default: #ffffff33;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+  /* Text colors */
+  --color-default: #ffffff;
+  --color-icon: #b1b1b1;
+  --color-subtitle: #cacaca;
+  --color-on-primary: #000000;
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  /* Fonts */
+  --font-sans: "Poppins", sans-serif;
+  --font-serif: "Domine", serif;
+
+  --tw-duration: 500ms;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+  body {
+    @apply bg-surface-default text-default font-sans;
   }
-  a:hover {
-    color: #747bff;
+}
+
+@utility wrapper {
+  @apply max-w-screen-2xl mx-auto;
+}
+
+@utility logo {
+  @apply text-2xl font-bold font-serif;
+}
+
+@utility text-display-lg {
+  @apply text-[3.75rem] leading-[4.5rem] font-semibold font-serif;
+}
+
+@utility text-display-md {
+  @apply text-[3rem] leading-[4rem] tracking-[-0.066rem] font-semibold font-serif;
+}
+
+@utility text-display-sm {
+  @apply text-[2.625rem] leading-[3.625rem] font-serif;
+}
+
+@utility text-display-accent {
+  @apply text-2xl font-normal text-secondary;
+}
+
+@utility chip {
+  @apply flex items-center justify-center py-2 px-6 gap-3 rounded-full bg-surface-card whitespace-nowrap;
+}
+
+@utility chip-sm {
+  @apply py-1.5 px-3 gap-2 text-sm;
+}
+
+.chip .icon {
+  @apply fill-icon w-6 h-6;
+}
+
+.chip-sm .icon {
+  @apply w-4 h-4;
+}
+
+.icon svg,
+.icon svg path,
+.icon svg g {
+  fill: inherit;
+}
+
+.icon svg {
+  @apply w-full h-full;
+}
+
+@utility input {
+  @apply bg-transparent placeholder:text-subtitle text-subtitle border border-default rounded-[1.75rem] py-3 px-6 !outline-none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 20px 20px transparent;
+}
+
+@utility project-card {
+  @apply relative h-auto aspect-[4/3] rounded-3xl cursor-pointer overflow-hidden;
+}
+
+.project-card > img {
+  @apply absolute inset-0 h-full w-full object-cover;
+}
+
+.project-card .details {
+  @apply absolute bottom-0 left-0 right-0 p-6 flex flex-col gap-3 transition-all;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  @media (hover: hover) {
+    transform: translateY(calc(100% - 4.5rem));
   }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+.project-card .details .chip .icon {
+  @apply fill-white;
+}
+
+.project-card .arrow {
+  @apply absolute top-4 right-4 bg-black/30 fill-white rounded-full aspect-square p-4 flex items-center justify-center;
+}
+
+.project-card .arrow .icon {
+  @apply w-6 h-6;
+}
+
+.project-card h3 {
+  @apply text-3xl font-semibold font-serif;
+}
+
+.project-card:hover .details {
+  transform: none;
+}
+
+@utility scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.landing-page > * {
+  @apply wrapper px-8;
+}
+
+.landing-page > section {
+  @apply min-h-screen justify-center;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+      117deg,
+      rgba(123, 55, 62, 0.15) 0%,
+      rgba(0, 0, 0, 0.18) 100%
+    ),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(77, 38, 0, 0.3) 100%),
+    #000;
+}
+
+.hero > * {
+  z-index: 2;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  bottom: -22.5vh;
+  left: -22.5vh;
+  width: 60vh;
+  height: 60vh;
+  border-radius: 100%;
+  outline: 3.5rem solid rgba(255, 255, 255, 0.1);
+  background-color: #150a01;
+  z-index: 1;
+}
+
+.double-underline {
+  position: relative;
+}
+
+.double-underline::after {
+  content: "";
+  background-image: url("/src/assets/double-underline.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2;
+  z-index: 1;
+}
+
+.call-to-action {
+  position: relative;
+}
+
+.call-to-action::after {
+  content: "";
+  background-image: url("/src/assets/arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: 0.25rem;
+  left: calc(100% + 2rem);
+  width: auto;
+  height: 150%;
+  aspect-ratio: 2;
+  z-index: 1;
+}
+
+.hero-image {
+  @apply relative;
+}
+
+.hero-image img {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30rem;
+  height: 30rem;
+  border-radius: 100%;
+  aspect-ratio: 1;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+nav a {
+  @apply text-subtitle transition-all;
+}
+
+nav a:hover {
+  @apply text-default font-medium;
+}
+
+footer {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(255, 205, 156, 0.3) 100%
+    ),
+    #000;
+}
+
+footer .links a {
+  @apply bg-surface-card fill-icon transition-all;
+}
+
+footer .links a:hover {
+  @apply bg-primary fill-on-primary;
 }
