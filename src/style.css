@@ -40,19 +40,31 @@
 }
 
 @utility text-display-lg {
-  @apply text-[3.75rem] leading-[4.5rem] font-semibold font-serif;
+  @apply text-[2.75rem] xl:text-[3.5rem] leading-[3.5rem] xl:leading-[4.5rem] font-semibold font-serif;
 }
 
 @utility text-display-md {
-  @apply text-[3rem] leading-[4rem] tracking-[-0.066rem] font-semibold font-serif;
+  @apply text-[2.25rem] xl:text-[3rem] leading-[3rem] xl:leading-[4rem] tracking-[-0.066rem] font-semibold font-serif;
 }
 
 @utility text-display-sm {
-  @apply text-[2.625rem] leading-[3.625rem] font-serif;
+  @apply text-[1.875rem] xl:text-[2.625rem] leading-[2.625rem] xl:leading-[3.625rem] font-serif;
 }
 
 @utility text-display-accent {
   @apply text-2xl font-normal text-secondary;
+}
+
+@utility text-body-lg {
+  @apply text-lg xl:text-xl;
+}
+
+@utility text-body-md {
+  @apply text-base xl:text-lg;
+}
+
+@utility text-body-sm {
+  @apply text-sm xl:text-base;
 }
 
 @utility chip {
@@ -103,7 +115,7 @@ input:-webkit-autofill:active {
 }
 
 .project-card .details {
-  @apply absolute bottom-0 left-0 right-0 p-6 flex flex-col gap-3 transition-all;
+  @apply absolute inset-0 p-4 sm:p-6 flex flex-col justify-end gap-3 transition-all;
 
   background: linear-gradient(
     180deg,
@@ -111,6 +123,7 @@ input:-webkit-autofill:active {
     rgba(0, 0, 0, 0.75) 100%
   );
   @media (hover: hover) {
+    top: unset;
     transform: translateY(calc(100% - 4.5rem));
   }
 }
@@ -120,15 +133,19 @@ input:-webkit-autofill:active {
 }
 
 .project-card .arrow {
-  @apply absolute top-4 right-4 bg-black/30 fill-white rounded-full aspect-square p-4 flex items-center justify-center;
+  @apply absolute top-2 right-2 sm:top-4 sm:right-4 bg-black/30 fill-white rounded-full aspect-square p-3 sm:p-4 flex items-center justify-center;
 }
 
 .project-card .arrow .icon {
-  @apply w-6 h-6;
+  @apply w-4 h-4 sm:w-6 sm:h-6;
 }
 
 .project-card h3 {
   @apply text-3xl font-semibold font-serif;
+}
+
+.project-card p {
+  @apply text-body-sm;
 }
 
 .project-card:hover .details {
@@ -149,11 +166,11 @@ input:-webkit-autofill:active {
 }
 
 .landing-page > section {
-  @apply min-h-screen justify-center;
+  @apply min-h-[min(800px,100vh)] justify-center;
 }
 
-.hero {
-  position: relative;
+.hero-container {
+  max-width: none;
   overflow: hidden;
   background: linear-gradient(
       117deg,
@@ -164,6 +181,11 @@ input:-webkit-autofill:active {
     #000;
 }
 
+.hero {
+  position: relative;
+  @apply wrapper min-h-[min(800px,100vh)];
+}
+
 .hero > * {
   z-index: 2;
 }
@@ -171,10 +193,10 @@ input:-webkit-autofill:active {
 .hero::before {
   content: "";
   position: absolute;
-  bottom: -22.5vh;
-  left: -22.5vh;
-  width: 60vh;
-  height: 60vh;
+  bottom: -20%;
+  left: -20%;
+  width: min(60vh, 500px);
+  height: min(60vh, 500px);
   border-radius: 100%;
   outline: 3.5rem solid rgba(255, 255, 255, 0.1);
   background-color: #150a01;
@@ -203,18 +225,20 @@ input:-webkit-autofill:active {
   position: relative;
 }
 
-.call-to-action::after {
-  content: "";
-  background-image: url("/src/assets/arrow.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  bottom: 0.25rem;
-  left: calc(100% + 2rem);
-  width: auto;
-  height: 150%;
-  aspect-ratio: 2;
-  z-index: 1;
+@media (width >= 48rem /* 768px */) {
+  .call-to-action::after {
+    content: "";
+    background-image: url("/src/assets/arrow.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: 0.25rem;
+    left: calc(100% + 2rem);
+    width: auto;
+    height: 150%;
+    aspect-ratio: 2;
+    z-index: 1;
+  }
 }
 
 .hero-image {
@@ -232,10 +256,10 @@ input:-webkit-autofill:active {
   top: -1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 30rem;
-  height: 30rem;
-  border-radius: 100%;
+  width: 80%;
+  height: auto;
   aspect-ratio: 1;
+  border-radius: 100%;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.05);
 }
@@ -255,6 +279,13 @@ footer {
       rgba(255, 205, 156, 0.3) 100%
     ),
     #000;
+}
+
+#contact {
+  max-width: none;
+}
+footer > section {
+  @apply wrapper;
 }
 
 footer .links a {

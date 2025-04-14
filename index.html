@@ -18,7 +18,7 @@
       class="fixed top-0 left-0 right-0 z-10 flex items-center justify-between gap-4 py-4">
       <span class="logo"><span class="text-secondary">Rael</span>Code</span>
 
-      <nav class="flex items-center gap-8 text-xl font-serif">
+      <nav class="max-lg:hidden flex items-center gap-8 text-xl font-serif">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#services">Services</a>
@@ -30,48 +30,54 @@
       </a>
     </header>
 
-    <section class="hero | pt-[5rem] relative flex items-center gap-8">
-      <div class="flex-1 flex flex-col gap-16 items-start mb-[5rem]">
-        <span class="text-display-sm font-sam -mb-10"
-          >Hello
-          <img
-            src="/src/assets/hello.png"
-            alt="emoji"
-            class="inline w-12 h-12 mb-3" />
-          , I'm <span class="font-semibold double-underline">Raphael</span>
-        </span>
-        <h1 class="text-display-lg">Full Stack Developer</h1>
-        <p class="text-xl">
-          with 4 years of experience and proven expertise in building
-          user-friendly websites with robust backend servers. Looking to build
-          innovative solutions.
-        </p>
-        <a
-          href="#contact"
-          class="bg-primary text-on-primary text-lg text-center py-3 px-12 rounded-full min-w-[18rem] call-to-action">
-          Get in touch
-        </a>
+    <section class="hero-container">
+      <div
+        class="hero | pt-[5rem] relative flex max-lg:flex-col items-center gap-8">
         <div
-          class="absolute bottom-12 left-8 bg-surface-card text-default py-2 px-6 rounded-full flex items-center gap-2">
-          Scroll down
-          <span class="icon w-4 h-4 fill-default">arrowDown</span>
+          class="flex-1 flex flex-col gap-8 md:gap-12 xl:gap-16 items-center lg:items-start max-lg:text-center max-lg:mt-8 lg:mb-[5rem]">
+          <span class="text-display-sm font-sam -mb-4 md:-mb-10"
+            >Hello
+            <img
+              src="/src/assets/hello.png"
+              alt="emoji"
+              class="inline w-12 h-12 mb-3" />
+            , I'm <span class="font-semibold double-underline">Raphael</span>
+          </span>
+          <h1 class="text-display-lg">Full Stack Developer</h1>
+          <p class="text-body-lg">
+            with 4 years of experience and proven expertise in building
+            user-friendly websites with robust backend servers. Looking to build
+            innovative solutions.
+          </p>
+          <a
+            href="#contact"
+            class="bg-primary text-on-primary text-lg text-center py-3 px-12 rounded-full min-w-[18rem] call-to-action">
+            Get in touch
+          </a>
+          <div
+            class="max-md:hidden absolute bottom-12 left-0 bg-surface-card text-default py-2 px-6 rounded-full flex items-center gap-2">
+            Scroll down
+            <span class="icon w-4 h-4 fill-default">arrowDown</span>
+          </div>
         </div>
-      </div>
-      <div class="flex-1 hero-image max-w-1/2 self-end">
-        <img
-          src="/src/assets/hero.webp"
-          alt="hero image"
-          class="w-full max-h-[calc(100vh-5rem)] object-contain object-bottom" />
+        <div class="flex-1 hero-image sm:max-w-1/2 lg:self-end">
+          <img
+            src="/src/assets/hero.webp"
+            alt="hero image"
+            class="w-full max-h-[calc(100vh-5rem)] object-contain object-bottom" />
+        </div>
       </div>
     </section>
 
-    <section id="about" class="py-[5rem] flex gap-16 items-center">
-      <div class="max-w-[60%] flex flex-col gap-10">
+    <section
+      id="about"
+      class="py-[5rem] flex max-lg:flex-col gap-16 items-center">
+      <div class="lg:max-w-[60%] flex flex-col gap-10">
         <span class="text-display-accent -mb-8">About Me</span>
         <h2 class="text-display-md">
           I build robust solutions that blend Design and Code!
         </h2>
-        <div class="text-lg flex flex-col gap-4">
+        <div class="text-body-md flex flex-col gap-4">
           <p>
             I'm a result-driven software engineer based in Nairobi, Kenya, with
             proven expertise in building user-friendly websites with robust
@@ -89,7 +95,7 @@
             and collaborate with like-minded individuals.
           </p>
         </div>
-        <div class="flex gap-6">
+        <div class="flex gap-3 lg:gap-6 flex-wrap">
           <div class="chip">
             <span class="icon">github</span>
             Github
@@ -104,26 +110,27 @@
           </div>
         </div>
       </div>
-      <div class="whitespace-nowrap flex flex-col gap-12 py-4 px-12 mx-auto">
+      <div
+        class="whitespace-nowrap flex lg:flex-col max-lg:flex-wrap gap-12 py-4 px-12 mx-auto">
         <div class="flex flex-col">
           <span class="text-display-lg"
             >4<span class="text-secondary">+</span></span
           >
-          <span class="text-xl text-subtitle">years of experience</span>
+          <span class="text-body-lg text-subtitle">years of experience</span>
         </div>
 
         <div class="flex flex-col">
           <span class="text-display-lg"
             >10<span class="text-secondary">+</span></span
           >
-          <span class="text-xl text-subtitle">clients worked with</span>
+          <span class="text-body-lg text-subtitle">clients worked with</span>
         </div>
 
         <div class="flex flex-col">
           <span class="text-display-lg"
             >15<span class="text-secondary">+</span></span
           >
-          <span class="text-xl text-subtitle">projects completed</span>
+          <span class="text-body-lg text-subtitle">projects completed</span>
         </div>
       </div>
     </section>
@@ -134,8 +141,9 @@
         Explore my portfolio of solutions
       </h2>
 
-      <div class="grid grid-cols-6 gap-10">
-        <article class="project-card | col-span-3">
+      <div class="grid md:grid-cols-6 gap-10">
+        <article
+          class="project-card | max-md:aspect-square md:max-xl:aspect-video md:col-span-6 xl:col-span-3">
           <img src="/src/assets/projects/raeltronics.webp" alt="raeltronics" />
           <span class="arrow">
             <span class="icon">arrowUpRight</span>
@@ -168,18 +176,18 @@
             </div>
           </div>
         </article>
-        <article class="project-card | col-span-3">
+        <article class="project-card | max-md:aspect-square md:col-span-3">
           <img src="/src/assets/projects/goatmentor.webp" alt="goatmentor" />
           <span class="arrow">
             <span class="icon">arrowUpRight</span>
           </span>
           <div class="details">
-            <h3>Goatmentor Technologies</h3>
+            <h3>Goatmentor</h3>
             <p>
               It serves as a centralized platform for user authentication and
               employment management for the company. It integrates an employment
               system and an online courses platform, enhancing functionality
-              across all our applications.
+              across all their apps.
             </p>
             <div class="flex gap-3 overflow-auto scrollbar-hidden">
               <div class="chip chip-sm">
@@ -201,7 +209,7 @@
             </div>
           </div>
         </article>
-        <article class="project-card | col-span-2">
+        <article class="project-card | md:col-span-3 xl:col-span-2">
           <img src="/src/assets/projects/eduk.webp" alt="eduk" />
           <span class="arrow">
             <span class="icon">arrowUpRight</span>
@@ -229,7 +237,7 @@
             </div>
           </div>
         </article>
-        <article class="project-card | col-span-2">
+        <article class="project-card | md:col-span-3 xl:col-span-2">
           <img src="/src/assets/projects/wifeplanet.webp" alt="wifeplanet" />
           <span class="arrow">
             <span class="icon">arrowUpRight</span>
@@ -257,7 +265,7 @@
             </div>
           </div>
         </article>
-        <article class="project-card | col-span-2">
+        <article class="project-card | md:col-span-3 xl:col-span-2">
           <img src="/src/assets/projects/sirience.webp" alt="sirience" />
           <div class="details">
             <h3>Sirience</h3>
@@ -292,16 +300,16 @@
       <article class="flex flex-col gap-10 my-8">
         <div class="flex items-center gap-6">
           <span class="icon w-12 h-12 fill-secondary">customizeComputer</span>
-          <h3 class="text-3xl font-serif font-semibold">
+          <h3 class="flex-1 text-2xl lg:text-3xl font-serif font-semibold">
             UI/UX Design & Frontend Development
           </h3>
         </div>
-        <p class="text-subtitle max-w-1/2">
+        <p class="text-subtitle lg:max-w-1/2">
           I design and develop captivating user interfaces and seamless user
           experiences for web and mobile applications, leveraging modern
           frameworks and a strong focus on design principles.
         </p>
-        <div class="flex gap-6">
+        <div class="flex gap-3 lg:gap-6 flex-wrap">
           <div class="chip flex-1">
             <span class="icon">figma</span>
             Figma
@@ -325,18 +333,18 @@
         </div>
       </article>
       <article class="flex flex-col gap-10 my-8">
-        <div class="flex items-center gap-6 self-end min-w-1/2">
+        <div class="flex items-center gap-6 lg:self-end lg:min-w-1/2">
           <span class="icon w-12 h-12 fill-secondary">databaseManagement</span>
-          <h3 class="text-3xl font-serif font-semibold">
+          <h3 class="flex-1 text-2xl lg:text-3xl font-serif font-semibold">
             Backend Web Development
           </h3>
         </div>
-        <p class="text-subtitle max-w-1/2 self-end">
+        <p class="text-subtitle lg:max-w-1/2 lg:self-end">
           I build scalable and reliable server-side applications and design
           efficient database systems to ensure robust performance and seamless
           functionality for your digital solutions.
         </p>
-        <div class="flex gap-6">
+        <div class="flex gap-3 lg:gap-6 flex-wrap">
           <div class="chip flex-1">
             <span class="icon">golang</span>
             Golang
@@ -362,14 +370,16 @@
       <article class="flex flex-col gap-10 my-8">
         <div class="flex items-center gap-6">
           <span class="icon w-12 h-12 fill-secondary">systemCloud</span>
-          <h3 class="text-3xl font-serif font-semibold">Cloud Deployment</h3>
+          <h3 class="flex-1 text-2xl lg:text-3xl font-serif font-semibold">
+            Cloud Deployment
+          </h3>
         </div>
-        <p class="text-subtitle max-w-1/2">
+        <p class="text-subtitle lg:max-w-1/2">
           I specialize in deploying, managing, and scaling applications on
           leading cloud platforms, utilizing containerization and infrastructure
           expertise for optimal efficiency and reliability.
         </p>
-        <div class="flex gap-6">
+        <div class="flex gap-3 lg:gap-6 flex-wrap">
           <div class="chip flex-1">
             <span class="icon">docker</span>
             Docker
@@ -393,13 +403,15 @@
         </div>
       </article>
     </section>
-    <section id="testimonials" class="py-[5rem] flex flex-col gap-12">
-      <span class="text-display-accent text-center -mb-10">Testimonials</span>
+    <section id="testimonials" class="py-[5rem] flex flex-col gap-8 sm:gap-12">
+      <span class="text-display-accent text-center -mb-6 sm:-mb-10"
+        >Testimonials</span
+      >
       <h2 class="text-display-md text-center">See what Clients say</h2>
       <div
         class="flex gap-12 justify-center-safe overflow-auto scrollbar-hidden my-12">
         <article
-          class="flex flex-col gap-8 p-8 rounded-3xl bg-surface-card min-w-2/5">
+          class="flex flex-col gap-8 p-8 rounded-3xl bg-surface-card min-w-full sm:min-w-3/5 lg:min-w-2/5">
           <img src="/src/assets/quote.svg" alt="quote" class="w-10" />
           <p class="flex-1 text-subtitle">
             It's been a pleasure working with Raphael. He did a great job, on
@@ -413,7 +425,7 @@
           </div>
         </article>
         <article
-          class="flex flex-col gap-8 p-8 rounded-3xl bg-surface-card min-w-2/5">
+          class="flex flex-col gap-8 p-8 rounded-3xl bg-surface-card min-w-full sm:min-w-3/5 lg:min-w-2/5">
           <img src="/src/assets/quote.svg" alt="quote" class="w-10" />
           <p class="flex-1 text-subtitle">
             Raphael is a hardworking person, he delivered all the milestones
@@ -426,7 +438,7 @@
           </div>
         </article>
         <article
-          class="flex flex-col gap-8 p-8 rounded-3xl bg-surface-card min-w-2/5">
+          class="flex flex-col gap-8 p-8 rounded-3xl bg-surface-card min-w-full sm:min-w-3/5 lg:min-w-2/5">
           <img src="/src/assets/quote.svg" alt="quote" class="w-10" />
           <p class="flex-1 text-subtitle">
             I worked with Raphael for only a few months. During this time, I saw
@@ -459,7 +471,7 @@
         Have a Project in Mind?<br />Let’s work together
       </h2>
       <div class="flex flex-col gap-4 w-full max-w-2xl mx-auto mt-4 mb-12">
-        <div class="flex gap-4">
+        <div class="flex max-sm:flex-col gap-4">
           <input type="text" placeholder="Your Name" class="flex-1 input" />
           <input
             type="email"
@@ -467,7 +479,7 @@
             class="flex-1 input" />
         </div>
         <textarea placeholder="Message..." class="input" rows="3"></textarea>
-        <div class="flex gap-4">
+        <div class="flex max-sm:flex-col gap-4">
           <input
             type="tel"
             placeholder="Phone (Optional)"
@@ -478,10 +490,10 @@
           </button>
         </div>
       </div>
-      <section class="flex items-center justify-between gap-4 py-4">
+      <section class="flex items-center justify-between gap-4 py-4 w-full">
         <span class="logo"><span class="text-secondary">Rael</span>Code</span>
 
-        <nav class="flex items-center gap-8 text-lg font-serif">
+        <nav class="max-lg:hidden flex items-center gap-8 text-lg font-serif">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#services">Services</a>
