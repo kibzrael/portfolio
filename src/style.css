@@ -134,6 +134,31 @@ input:-webkit-autofill:active {
   transform: translateY(-2px);
 }
 
+@utility loading-indicator {
+  border-color: var(--color-on-primary);
+}
+
+.loading-indicator[data-loading="true"] {
+  @apply relative !text-transparent;
+}
+
+.loading-indicator[data-loading="true"]::after {
+  content: "";
+  animation: rotation 1s linear infinite;
+  border-block-color: inherit;
+  border-inline-color: transparent;
+  @apply box-border absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 h-[45%] aspect-square rounded-full border-2 border-solid;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @utility project-card {
   @apply relative h-auto aspect-[4/3] rounded-3xl cursor-pointer overflow-hidden;
 }

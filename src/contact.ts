@@ -5,6 +5,8 @@ export default function handleContact() {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(form as HTMLFormElement);
+    const button = form.querySelector("#contact-submit");
+    button?.setAttribute("data-loading", "true");
     fetch("/api/contact", {
       method: "POST",
       body: JSON.stringify({
@@ -18,6 +20,7 @@ export default function handleContact() {
       },
     }).then(async (response) => {
       const data = await response.json();
+      button?.removeAttribute("data-loading");
       alert(data.message || "Error sending message. Please try again.");
     });
   });
