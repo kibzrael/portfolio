@@ -26,6 +26,10 @@
 }
 
 @layer base {
+  :root {
+    color-scheme: dark;
+  }
+
   body {
     @apply bg-surface-default text-default font-sans;
   }

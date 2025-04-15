@@ -523,18 +523,33 @@
       <h2 class="text-display-md text-center">
         Have a Project in Mind?<br />Let’s work together
       </h2>
-      <div class="flex flex-col gap-4 w-full max-w-2xl mx-auto mt-4 mb-12">
+      <form
+        id="contact-form"
+        class="flex flex-col gap-4 w-full max-w-2xl mx-auto mt-4 mb-12">
         <div class="flex max-sm:flex-col gap-4">
-          <input type="text" placeholder="Your Name" class="flex-1 input" />
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            class="flex-1 input"
+            required />
           <input
             type="email"
+            name="email"
             placeholder="Email Address"
-            class="flex-1 input" />
+            class="flex-1 input"
+            required />
         </div>
-        <textarea placeholder="Message..." class="input" rows="3"></textarea>
+        <textarea
+          name="message"
+          placeholder="Message..."
+          class="input"
+          rows="3"
+          required></textarea>
         <div class="flex max-sm:flex-col gap-4">
           <input
             type="tel"
+            name="phone"
             placeholder="Phone (Optional)"
             class="flex-2 input" />
           <button
@@ -542,7 +557,7 @@
             Get in touch
           </button>
         </div>
-      </div>
+      </form>
       <section class="flex items-center justify-between gap-4 py-4 w-full">
         <a href="#" class="logo"
           ><span class="text-secondary">Rael</span>Code</a
