@@ -1,4 +1,4 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelResponse } from "@vercel/node";
 import nodemailer from "nodemailer";
 import format from "string-template";
 
@@ -11,31 +11,38 @@ export const transporter = nodemailer.createTransport({
   },
 });
 
-export async function POST(request: VercelRequest, response: VercelResponse) {
+export async function POST(request: Request, response: VercelResponse) {
   try {
-    const data = await request.body.json();
+    const data = await request.json();
 
     const html = await fetch(new URL("/templates/contact.html", request.url));
     const htmlBody = format(await html.text(), data);
 
     await transporter.sendMail({
-      from: `"${data.name}" <${data.email}>`, // sender address
-      to: process.env.MAIL_APP_USER, // list of receivers
-      subject: `RaelCode contact from ${data.name}`, // Subject line
-      text: data.message, // plain text body
-      html: htmlBody, // html body
+      from: `"${data.name}" <${data.email}>`,
+      to: process.env.MAIL_APP_USER,
+      subject: `RaelCode contact from ${data.name}`,
+      text: data.message,
+      html: htmlBody,
     });
 
-    return response.json({
-      success: true,
-      message: "Message sent successfully",
-    });
+    return Response.json(
+      {
+        success: true,
+        message:
+          "Message sent successfully. I will reach out to you as soon as possible. Thank you.",
+      },
+      { status: 200 }
+    );
   } catch (error) {
-    return response.json({
-      success: false,
-      message: error.message || "Error sending message",
-      error: error.code + ": " + error.toString(),
-      url: request.url,
-    });
+    return Response.json(
+      {
+        success: false,
+        message: error.message || "Error sending message. Please try again.",
+        error: error.code + ": " + error.toString(),
+        url: request.url,
+      },
+      { status: 500 }
+    );
   }
 }

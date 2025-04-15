@@ -18,7 +18,7 @@ export default function handleContact() {
       },
     }).then(async (response) => {
       const data = await response.json();
-      alert(data.message || "Error sending message");
+      alert(data.message || "Error sending message. Please try again.");
     });
   });
 }
