@@ -8,7 +8,14 @@ export default function handleTestimonials() {
     );
     els.forEach((el) => revealAnimation(el));
   });
-  inView("#testimonials-carousel", () => {
-    revealAnimation("#testimonials-carousel > article", { stagger: 0.2 });
+  inView("#testimonials-carousel", (el) => {
+    const carousel = el as HTMLElement;
+    carousel.style.overflow = "visible";
+    const animation = revealAnimation("#testimonials-carousel > article", {
+      stagger: 0.2,
+    });
+    animation.then(() => {
+      carousel.style.overflow = "";
+    });
   });
 }

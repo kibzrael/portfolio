@@ -1,9 +1,7 @@
 import handleAbout from "./about";
-import handleContact from "./contact";
 import handleCursorGlow from "./cursor-glow";
 import handleHero from "./hero";
 import handleProjects from "./projects";
-import handleServices from "./services";
 import handleTestimonials from "./testimonials";
 
 export default function initAnimations() {
@@ -13,7 +11,7 @@ export default function initAnimations() {
   handleHero();
   handleAbout();
   handleProjects();
-  handleServices();
+  // handleServices();
   handleTestimonials();
-  handleContact();
+  // handleContact();
 }
