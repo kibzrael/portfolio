@@ -1,3 +1,4 @@
+import { initAnalytics } from "./analytics";
 import initAnimations from "./animations";
 import handleContact from "./contact";
 import { renderIcons } from "./icons";
@@ -7,3 +8,4 @@ renderIcons();
 initAnimations();
 handleUtils();
 handleContact();
+initAnalytics();
