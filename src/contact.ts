@@ -1,35 +1,27 @@
 export default function handleContact() {
-  const form = document.getElementById("contact-form");
+  const form = document.getElementById("contact-frm");
   if (!form) return;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(form as HTMLFormElement);
-    const button = form.querySelector("#contact-submit");
+    const button = form.querySelector("#contact-submit-btn");
     button?.setAttribute("data-loading", "true");
-    const browserData = JSON.stringify(
-      // @ts-ignore
-      window.navigator.userAgentData || {},
-      null,
-      2
-    );
-    +JSON.stringify(window.navigator.languages, null, 2);
     fetch("/api/contact", {
       method: "POST",
       body: JSON.stringify({
         name: formData.get("name"),
         email: formData.get("email"),
         phone: formData.get("phone"),
-        message: formData.get("message") + "\n" + browserData,
+        message: formData.get("message"),
       }),
       headers: {
         "Content-Type": "application/json",
       },
-    }).then(async () => {
-      // const data = await response.json();
+    }).then(async (response) => {
+      const data = await response.json();
       button?.removeAttribute("data-loading");
-      alert("KELVIN ???");
-      // alert(data.message || "Error sending message. Please try again.");
+      alert(data.message || "Error sending message. Please try again.");
     });
   });
 }
