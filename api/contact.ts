@@ -18,11 +18,13 @@ export async function POST(request: Request, response: VercelResponse) {
     const html = await fetch(new URL("/templates/contact.html", request.url));
     const htmlBody = format(await html.text(), data);
 
+    const text = `Hello I am ${data.name}, my email is ${data.email} and phone is ${data.phone}. ${data.message}`;
+
     await transporter.sendMail({
-      from: `"${data.name}" <${data.email}>`,
+      from: `"${data.name}" <${process.env.MAIL_APP_USER}>`,
       to: process.env.MAIL_APP_USER,
       subject: `RaelCode contact from ${data.name}`,
-      text: data.message,
+      text,
       html: htmlBody,
     });
 
@@ -32,7 +34,7 @@ export async function POST(request: Request, response: VercelResponse) {
         message:
           "Message sent successfully. I will reach out to you as soon as possible. Thank you.",
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     return Response.json(
@@ -42,7 +44,7 @@ export async function POST(request: Request, response: VercelResponse) {
         error: error.code + ": " + error.toString(),
         url: request.url,
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
